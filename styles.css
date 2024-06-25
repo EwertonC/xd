@@ -1,0 +1,98 @@
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #1e1e1e;
+    width: 80%;
+    margin-bottom: 10px;
+}
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: 0.3s;
+    color: #ffffff;
+}
+.tab button:hover {
+    background-color: #333;
+}
+.tabcontent {
+    display: none;
+}
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.left, .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card, .empty-space {
+    background-color: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    width: 80px;
+    text-align: center;
+}
+.empty-space {
+    visibility: hidden;
+}
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 5px;
+    color: #121212;
+}
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1e1e1e;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+.popup button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #ffffff;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+}
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+}

@@ -3,133 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .main-container {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-        }
-        .left, .right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .card, .empty-space {
-            background-color: #1e1e1e;
-            border: 1px solid #333;
-            border-radius: 10px;
-            margin: 10px;
-            padding: 10px;
-            width: 80px;
-            text-align: center;
-        }
-        .empty-space {
-            visibility: hidden;
-        }
-        input[type="number"] {
-            width: 60px;
-            padding: 5px;
-            margin: 5px 0;
-            border: none;
-            border-radius: 5px;
-            color: #121212;
-        }
-        .popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #1e1e1e;
-            padding: 20px;
-            border: 2px solid #333;
-            border-radius: 10px;
-            text-align: center;
-            display: none;
-        }
-        .popup button {
-            margin-top: 10px;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            background-color: #333;
-            color: #ffffff;
-        }
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
-        }
-        @media (max-width: 600px) {
-            .card {
-                width: 90%;
-            }
-        }
-    </style>
+    <title>Night Mode Cards</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="main-container">
-        <div class="left">
-            <div class="card">
-                <h4>Helm</h4>
-                <input type="number" id="atual1" min="0" placeholder="Atual">
-                <input type="number" id="card1" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Chest Armor</h4>
-                <input type="number" id="atual2" min="0" placeholder="Atual">
-                <input type="number" id="card2" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Gloves</h4>
-                <input type="number" id="atual3" min="0" placeholder="Atual">
-                <input type="number" id="card3" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Pants</h4>
-                <input type="number" id="atual4" min="0" placeholder="Atual">
-                <input type="number" id="card4" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Boots</h4>
-                <input type="number" id="atual5" min="0" placeholder="Atual">
-                <input type="number" id="card5" min="0" placeholder="MW Rank">
-            </div>
-        </div>
-        <div class="empty-space"></div>
-        <div class="right">
-            <div class="card">
-                <h4>Amulet</h4>
-                <input type="number" id="atual6" min="0" placeholder="Atual">
-                <input type="number" id="card6" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Ring 1</h4>
-                <input type="number" id="atual7" min="0" placeholder="Atual">
-                <input type="number" id="card7" min="0" placeholder="MW Rank">
-            </div>
-            <div class="card">
-                <h4>Ring 2</h4>
-                <input type="number" id="atual8" min="0" placeholder="Atual">
-                <input type="number" id="card8" min="0" placeholder="MW Rank">
+    <div class="tab">
+        <button class="tablinks active" onclick="openTab(event, 'simple')">Simple</button>
+        <button class="tablinks" onclick="openTab(event, 'detailed')">Detailed</button>
+    </div>
+
+    <div id="simple" class="tabcontent">
+        <div class="main-container">
+            <div class="single-item">
+                <div class="card">
+                    <h4>Item</h4>
+                    <input type="number" id="simpleItem" min="0" placeholder="Atual">
+                    <input type="number" id="card1" min="0" placeholder="MW Rank">
+                </div>
             </div>
         </div>
     </div>
+
+    <div id="detailed" class="tabcontent">
+        <div class="main-container">
+            <div class="left">
+                <div class="card">
+                    <h4>Helm</h4>
+                    <input type="number" id="atual1" min="0" placeholder="Atual">
+                    <input type="number" id="card1" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Chest Armor</h4>
+                    <input type="number" id="atual2" min="0" placeholder="Atual">
+                    <input type="number" id="card2" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Gloves</h4>
+                    <input type="number" id="atual3" min="0" placeholder="Atual">
+                    <input type="number" id="card3" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Pants</h4>
+                    <input type="number" id="atual4" min="0" placeholder="Atual">
+                    <input type="number" id="card4" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Boots</h4>
+                    <input type="number" id="atual5" min="0" placeholder="Atual">
+                    <input type="number" id="card5" min="0" placeholder="MW Rank">
+                </div>
+            </div>
+            <div class="empty-space"></div>
+            <div class="right">
+                <div class="card">
+                    <h4>Amulet</h4>
+                    <input type="number" id="atual6" min="0" placeholder="Atual">
+                    <input type="number" id="card6" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Ring 1</h4>
+                    <input type="number" id="atual7" min="0" placeholder="Atual">
+                    <input type="number" id="card7" min="0" placeholder="MW Rank">
+                </div>
+                <div class="card">
+                    <h4>Ring 2</h4>
+                    <input type="number" id="atual8" min="0" placeholder="Atual">
+                    <input type="number" id="card8" min="0" placeholder="MW Rank">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <button onclick="calculate()">Calcular</button>
 
     <div class="overlay" id="overlay" onclick="closePopup()"></div>
@@ -138,29 +82,10 @@
         <button onclick="closePopup()">Fechar</button>
     </div>
 
+    <script src="scripts.js"></script>
     <script>
-        function calculate() {
-            let sum = 0;
-            for (let i = 1; i <= 8; i++) {
-                const value = parseFloat(document.getElementById('card' + i).value) || 0;
-                if (value >= 1) {
-                    sum += value;
-                }
-            }
-            const result = sum * 40;
-            document.getElementById('result').innerText = 'Resultado: ' + result;
-            openPopup();
-        }
-
-        function openPopup() {
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
+        // Mostrar conteúdo da aba "Simple" por padrão
+        document.getElementById('simple').style.display = 'block';
     </script>
 </body>
 </html>

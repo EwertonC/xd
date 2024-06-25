@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="tab">
-        <button class="tablinks active" onclick="openTab(event, 'simple')">Simple</button>
+        <button class="tablinks" onclick="openTab(event, 'simple')">Simple</button>
         <button class="tablinks" onclick="openTab(event, 'detailed')">Detailed</button>
     </div>
 
@@ -17,8 +17,8 @@
             <div class="single-item">
                 <div class="card">
                     <h4>Item</h4>
-                    <input type="number" id="simpleItem" min="0" placeholder="Atual">
-                    <input type="number" id="card1" min="0" placeholder="MW Rank">
+                    <input type="number" id="simpleAtual" min="0" value="0">
+                    <input type="number" id="simpleRank" min="0" value="0">
                 </div>
             </div>
         </div>
@@ -29,52 +29,52 @@
             <div class="left">
                 <div class="card">
                     <h4>Helm</h4>
-                    <input type="number" id="atual1" min="0" placeholder="Atual">
-                    <input type="number" id="card1" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual1" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card1" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Chest Armor</h4>
-                    <input type="number" id="atual2" min="0" placeholder="Atual">
-                    <input type="number" id="card2" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual2" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card2" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Gloves</h4>
-                    <input type="number" id="atual3" min="0" placeholder="Atual">
-                    <input type="number" id="card3" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual3" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card3" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Pants</h4>
-                    <input type="number" id="atual4" min="0" placeholder="Atual">
-                    <input type="number" id="card4" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual4" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card4" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Boots</h4>
-                    <input type="number" id="atual5" min="0" placeholder="Atual">
-                    <input type="number" id="card5" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual5" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card5" min="0" value="0" class="small-input" placeholder="N">
                 </div>
             </div>
             <div class="empty-space"></div>
             <div class="right">
                 <div class="card">
                     <h4>Amulet</h4>
-                    <input type="number" id="atual6" min="0" placeholder="Atual">
-                    <input type="number" id="card6" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual6" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card6" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Ring 1</h4>
-                    <input type="number" id="atual7" min="0" placeholder="Atual">
-                    <input type="number" id="card7" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual7" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card7" min="0" value="0" class="small-input" placeholder="N">
                 </div>
                 <div class="card">
                     <h4>Ring 2</h4>
-                    <input type="number" id="atual8" min="0" placeholder="Atual">
-                    <input type="number" id="card8" min="0" placeholder="MW Rank">
+                    <input type="number" id="atual8" min="0" value="0" class="small-input" placeholder="C">
+                    <input type="number" id="card8" min="0" value="0" class="small-input" placeholder="N">
                 </div>
             </div>
         </div>
     </div>
 
-    <button onclick="calculate()">Calcular</button>
+    <button class="calculate-btn" onclick="calculate()">Calcular</button>
 
     <div class="overlay" id="overlay" onclick="closePopup()"></div>
     <div class="popup" id="popup">
@@ -83,9 +83,5 @@
     </div>
 
     <script src="scripts.js"></script>
-    <script>
-        // Mostrar conteúdo da aba "Simple" por padrão
-        document.getElementById('simple').style.display = 'block';
-    </script>
 </body>
 </html>
